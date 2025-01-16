@@ -22,7 +22,7 @@
             <div class="d-flex gap-3">
                 @auth()
                     @if(Auth::user()->is_admin)
-                        <a href="{{ route('adminPanel') }}" class="btn text-white btn-info">Панель админа</a>
+                        <a href="{{ route('admin') }}" class="btn text-white btn-info">Панель админа</a>
                     @endif
                     @if(!Auth::user()->is_admin)
                             <a href="" class="btn btn-primary">Корзина</a>
