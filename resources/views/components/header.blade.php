@@ -25,7 +25,7 @@
                         <a href="{{ route('adminPanel') }}" class="btn text-white btn-info">Панель админа</a>
                     @endif
                     @if(!Auth::user()->isAdmin)
-                            <a href="" class="btn btn-primary">Корзина</a>
+                            <a href="" class="btn btn-primary">Корзинаа</a>
                     @endif
                     <a href="{{ route('logout') }}" class="btn btn-danger">Выйти</a>
                 @endauth
