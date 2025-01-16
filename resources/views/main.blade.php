@@ -43,11 +43,13 @@
                         <img src="{{asset('assets/images/Group3.png')}}" class="d-block w-100" alt="...">
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
@@ -67,52 +69,63 @@
                                 <img src="{{asset('assets/images/20137.png')}}" class="card-img-top" alt="LG">
                                 <div class="card-body">
                                     <h5 class="card-title">LG</h5>
-                                    <p class="card-text">LG — южнокорейская компания, известная производством бытовой техники, телевизоров и другой электроники.</p>
+                                    <p class="card-text">LG — южнокорейская компания, известная производством бытовой
+                                        техники, телевизоров и другой электроники.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col d-flex justify-content-center">
                             <div class="card" style="width: 18rem;">
-                                <img src="{{asset('assets/images/0h3rie0jfj0pa3pr9mvmrew0saiqysuy.png')}}" class="card-img-top" alt="Samsung">
+                                <img src="{{asset('assets/images/0h3rie0jfj0pa3pr9mvmrew0saiqysuy.png')}}"
+                                     class="card-img-top" alt="Samsung">
                                 <div class="card-body">
                                     <h5 class="card-title">Samsung</h5>
-                                    <p class="card-text">Samsung — южнокорейский бренд, лидер в производстве бытовой техники, электроники и мобильных устройств.</p>
+                                    <p class="card-text">Samsung — южнокорейский бренд, лидер в производстве бытовой
+                                        техники, электроники и мобильных устройств.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col d-flex justify-content-center">
                             <div class="card" style="width: 18rem;">
-                                <img src="{{asset('assets/images/45137166-16122917341258523_origin.png')}}" class="card-img-top" alt="Philips">
+                                <img src="{{asset('assets/images/45137166-16122917341258523_origin.png')}}"
+                                     class="card-img-top" alt="Philips">
                                 <div class="card-body">
                                     <h5 class="card-title">Philips</h5>
-                                    <p class="card-text">Philips — нидерландская компания, выпускающая бытовую технику, светотехнику и медицинское оборудование.</p>
+                                    <p class="card-text">Philips — нидерландская компания, выпускающая бытовую технику,
+                                        светотехнику и медицинское оборудование.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col d-flex justify-content-center">
                             <div class="card" style="width: 18rem;">
-                                <img src="{{asset('assets/images/6364faa19a728.png')}}" class="card-img-top" alt="Bosch">
+                                <img src="{{asset('assets/images/6364faa19a728.png')}}" class="card-img-top"
+                                     alt="Bosch">
                                 <div class="card-body">
                                     <h5 class="card-title">Bosch</h5>
-                                    <p class="card-text">Bosch — немецкий производитель бытовой техники, известный своим качеством и инновациями.</p>
+                                    <p class="card-text">Bosch — немецкий производитель бытовой техники, известный своим
+                                        качеством и инновациями.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col d-flex justify-content-center">
                             <div class="card" style="width: 18rem;">
-                                <img src="{{asset('assets/images/whirlpool.png')}}" class="card-img-top" alt="Whirlpool">
+                                <img src="{{asset('assets/images/whirlpool.png')}}" class="card-img-top"
+                                     alt="Whirlpool">
                                 <div class="card-body">
                                     <h5 class="card-title">Whirlpool</h5>
-                                    <p class="card-text">Whirlpool — американская компания, один из крупнейших производителей бытовой техники в мире.</p>
+                                    <p class="card-text">Whirlpool — американская компания, один из крупнейших
+                                        производителей бытовой техники в мире.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col d-flex justify-content-center">
                             <div class="card" style="width: 18rem;">
-                                <img src="{{asset('assets/images/d1padar65mfi8h3wxx1lnqm09v4pq73u.webp')}}" class="card-img-top" alt="Electrolux">
+                                <img src="{{asset('assets/images/d1padar65mfi8h3wxx1lnqm09v4pq73u.webp')}}"
+                                     class="card-img-top" alt="Electrolux">
                                 <div class="card-body">
                                     <h5 class="card-title">Electrolux</h5>
-                                    <p class="card-text">Electrolux — шведская компания, выпускающая широкий спектр бытовой техники, включая пылесосы и плиты.</p>
+                                    <p class="card-text">Electrolux — шведская компания, выпускающая широкий спектр
+                                        бытовой техники, включая пылесосы и плиты.</p>
                                 </div>
                             </div>
                         </div>
@@ -121,11 +134,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
 
     <div class="reviews">
         <div class="d-flex justify-content-center align-items-center">
