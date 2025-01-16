@@ -11,6 +11,7 @@
     <title>@yield('title', 'ТехноДом')</title>
 </head>
 <body>
+@include('components.header')
 @yield('content')
 </body>
 </html>
