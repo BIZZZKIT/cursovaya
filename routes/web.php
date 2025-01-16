@@ -23,3 +23,5 @@ Route::view('/about', 'about')->name('about');
 Route::view('/auth','user.auth')->name('auth');
 Route::view('/register','user.register')->name('register');
 Route::post('/register',[UserController::class, 'registrationPost']);
+
+Route::view('/admin','admin.admin-panel')->name('admin');

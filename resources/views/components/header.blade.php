@@ -21,18 +21,18 @@
             </ul>
             <div class="d-flex gap-3">
                 @auth()
-                    @if(Auth::user()->is_admin)
+                    @if(Auth::user()->isAdmin)
                         <a href="{{ route('adminPanel') }}" class="btn text-white btn-info">Панель админа</a>
                     @endif
                     @if(!Auth::user()->isAdmin)
-                            <a href="{{ route('add_order') }}" class="btn btn-primary">Корзина</a>
+                            <a href="" class="btn btn-primary">Корзина</a>
                     @endif
                     <a href="{{ route('logout') }}" class="btn btn-danger">Выйти</a>
                 @endauth
 
                 @guest()
-                        <a href="{{route('auth')}}"><div class="btn btn-primary">Вход</div></a>
-                        <a href="{{route('register')}}"><div class="btn text-white btn-info">Зарегистрироваться</div></a>
+                    <div class="btn btn-primary">Вход</div>
+                    <div class="btn text-white btn-info">Зарегистрироваться</div>
                 @endguest
             </div>
         </div>
