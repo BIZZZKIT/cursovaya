@@ -17,5 +17,7 @@ Route::get('/', function () {
     return view('main');
 })->name('main');
 
-
 Route::view('/about', 'about')->name('about');
+
+Route::view('/auth','user.auth')->name('auth');
+Route::view('/register','user.register')->name('register');
