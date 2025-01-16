@@ -11,6 +11,6 @@
     <title>@yield('title', 'ТехноДом')</title>
 </head>
 <body>
-
+@yield('content')
 </body>
 </html>
