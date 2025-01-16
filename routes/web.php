@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,10 +29,10 @@ Route::view('/catalog','catalog')->name('catalog');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/logout',[UserController::class, 'logout'])->name('logout');
+    Route::group(['middleware' => 'role'], function () {
+        Route::view('/admin','admin.admin-panel')->name('admin');
+        Route::post('/admin/categoryCreate',[CategoryController::class, 'createCategory'])->name('categoryCreate');
+});
 });
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('/logout',[UserController::class, 'logout'])->name('logout');
-});
 
-Route::view('/admin','admin.admin-panel')->name('admin');
