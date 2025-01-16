@@ -23,9 +23,9 @@ class RegistrationRequest extends FormRequest
     {
         return [
             'login' => 'required|string|max:50|unique:users,login',
-            'full_name' => 'required|string|max:255',
-            'number_phone' => 'required|string|regex:/^\+?[0-9]{10,15}$/|unique:users,number_phone',
-            'password' => 'required|string|min:8|confirmed',
+            'full_name' => 'required|string|max:255|regex:/^[\p{L}\p{Cyrillic}\p{Latin}\s-]+$/u',
+            'number_phone' => 'required|string|unique:users,number_phone',
+            'password' => 'required|string|min:8|same:repeat_password',
             'check' => 'accepted',
         ];
     }
