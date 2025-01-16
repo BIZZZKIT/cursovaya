@@ -13,7 +13,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('about')}}">Каталог</a>
+                    <a class="nav-link" href="{{route('catalog')}}">Каталог</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('about')}}">О нас</a>
@@ -31,8 +31,8 @@
                 @endauth
 
                 @guest()
-                    <div class="btn btn-primary">Вход</div>
-                    <div class="btn text-white btn-info">Зарегистрироваться</div>
+                        <a href="{{route('auth')}}"><div class="btn btn-primary">Вход</div></a>
+                        <a href="{{route('register')}}"><div class="btn text-white btn-info">Зарегистрироваться</div></a>
                 @endguest
             </div>
         </div>
