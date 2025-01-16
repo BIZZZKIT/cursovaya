@@ -6,8 +6,12 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function createCategory()
+    public function createCategory(Request $request)
     {
-
+        $name_category = $request->input('name_category');
+        Category::create([
+            'name_category' => $name_category,
+        ]);
+        return back()->with(['succesCreateCategory' => 'Успешно создали категорию']);
     }
 }
