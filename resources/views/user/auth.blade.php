@@ -16,7 +16,7 @@
                         @enderror
                     </div>
                     <div class="mb-4">
-                        <input type="password" name="password" placeholder="Ваш пароль" class="form-control @error('password') is-invalid @enderror" id="password">
+                        <input type="password" name="password" placeholder="Ваш парол" class="form-control @error('password') is-invalid @enderror" id="password">
                         @error('password')
                         <div class="invalid-feedback">
                             {{ $message }}
