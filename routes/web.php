@@ -15,5 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-})->name('main');
-Route::view('/about', 'about')->name('about');
+});
