@@ -6,8 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -16,8 +15,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(User::class)->constrained('users')->cascadeOnDelete();
-            $table->enum('status',['В обработке','Отправлен','Получен'])->default('В обработке');
-            $table->foreignIdFor(Basket::class)->constrained('baskets')->cascadeOnDelete();
+            $table->enum('status', ['В обработке', 'Отправлен', 'Получен'])->default('В обработке');
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
             $table->timestamps();

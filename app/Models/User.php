@@ -14,9 +14,9 @@ class User extends Authenticatable
 
     protected $guarded = ['id'];
 
-    public function basket()
+    public function basketItems()
     {
-        return $this->hasMany(Basket::class);
+        return $this->hasMany(BasketItem::class);
     }
 
     public function orders()
