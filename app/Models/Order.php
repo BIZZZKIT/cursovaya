@@ -18,6 +18,6 @@ class Order extends Model
 
     public function basketItems()
     {
-        return $this->hasMany(BasketItem::class);
+        return $this->hasMany(basket_items::class);
     }
 }

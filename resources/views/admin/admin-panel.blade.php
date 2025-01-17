@@ -55,7 +55,7 @@
                         Управление заказами
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Таблица заказов</a></li>
+                        <a class="dropdown-item" href="{{route('tableOrders')}}"><li>Таблица заказов</li></a>
                     </ul>
                 </div>
             </div>

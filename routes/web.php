@@ -38,6 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/basket/decrease/{basketId}', [BasketController::class, 'decreaseProductCount'])->name('decreaseProductCount');
     Route::post('/basket/increase/{basketId}', [BasketController::class, 'increaseProductCount'])->name('increaseProductCount');
     Route::post('/basket/createOrder', [OrderController::class, 'createOrder'])->name('createOrder');
+    Route::get('/myOrders', [OrderController::class, 'getUserOrder'])->name('myOrders');
     Route::group(['middleware' => 'role'], function () {
         Route::view('/admin','admin.admin-panel')->name('admin');
         Route::post('/admin/categoryCreate',[CategoryController::class, 'createCategory'])->name('categoryCreate');
@@ -45,7 +46,10 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/admin/createProduct',[ProductController::class, 'createProduct']);
         Route::get('/admin/productList',[ProductController::class, 'getProductsAdmin'])->name('productList');
         Route::delete('/admin/removeProduct/{productId}',[ProductController::class, 'removeProduct'])->name('removeProduct');
-});
+        Route::get('/admin/tableOrders',[OrderController::class, 'getAllOrders'])->name('tableOrders');
+        Route::post('/orders/change-status', [OrderController::class, 'changeStatus'])->name('orders.changeStatus');
+
+    });
 });
 
 
