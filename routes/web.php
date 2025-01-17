@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BasketController;
+use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
@@ -27,7 +28,7 @@ Route::view('/auth','user.auth')->name('login');
 Route::post('/auth',[UserController::class,'loginPost'])->name('login');
 Route::view('/register','user.register')->name('register');
 Route::post('/register',[UserController::class, 'registrationPost']);
-Route::get('/catalog',[ProductController::class, 'getProducts'])->name('catalog');
+Route::get('/catalog',[CatalogController::class, 'viewCatalog'])->name('catalog');
 Route::view('/product','card-product')->name('product');
 Route::get('/product/{id}',[ProductController::class, 'getCardProducts']);
 Route::group(['middleware' => 'auth'], function () {
