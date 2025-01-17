@@ -13,7 +13,7 @@ class Product extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class, 'category_id')->first()->name_category;
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
     public function order()

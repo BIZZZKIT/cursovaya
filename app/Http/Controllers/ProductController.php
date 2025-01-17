@@ -26,4 +26,11 @@ class ProductController extends Controller
         $product->delete();
         return back()->with(['delete_product' => $name]);
     }
+
+    public function getProducts()
+    {
+        $products = Product::all();
+
+        return view('catalog', ['products' => $products]);
+    }
 }

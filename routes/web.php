@@ -26,7 +26,7 @@ Route::view('/auth','user.auth')->name('login');
 Route::post('/auth',[UserController::class,'loginPost'])->name('login');
 Route::view('/register','user.register')->name('register');
 Route::post('/register',[UserController::class, 'registrationPost']);
-Route::view('/catalog','catalog')->name('catalog');
+Route::get('/catalog',[ProductController::class, 'getProducts'])->name('catalog');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/logout',[UserController::class, 'logout'])->name('logout');
