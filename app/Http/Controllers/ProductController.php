@@ -39,4 +39,11 @@ class ProductController extends Controller
 
         return view('admin.tableProducts', ['products' => $products]);
     }
+
+    public function getCardProducts($id)
+    {
+        $products = Product::findOrFail($id);
+
+        return view('card-product', ['products' => $products]);
+    }
 }
