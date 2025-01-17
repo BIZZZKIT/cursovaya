@@ -14,18 +14,29 @@
                 <th scope="col">Категория</th>
                 <th scope="col">Описание</th>
                 <th scope="col">Изображение</th>
+                <th scope="col">Действие</th>
             </tr>
             </thead>
             <tbody>
             @foreach($products as $product)
                 <tr>
-                    <th>{{$product->id}}</th>
-                    <th>{{$product->name_product}}</th>
-                    <th>{{$product->price_product}}</th>
-                    <th>{{$product->category->name_category}}</th>
-                    <th>{{$product->description_product}}</th>
-                    <th><img src="{{asset('storage/' . $product->image_product)}}" alt="" style="width: 100px"></th>
+                    <th style=" vertical-align: middle;">{{$product->id}}</th>
+                    <th style=" vertical-align: middle;">{{$product->name_product}}</th>
+                    <th style=" vertical-align: middle;">{{$product->price_product}}</th>
+                    <th style=" vertical-align: middle;">{{$product->category->name_category}}</th>
+                    <th style=" vertical-align: middle;">{{$product->description_product}}</th>
+                    <th style=" vertical-align: middle;">
+                        <img src="{{asset('storage/' . $product->image_product)}}" alt="" style="width: 100px">
+                    </th>
+                    <th style=" vertical-align: middle;">
+                        <form action="{{route('removeProduct', ['productId' => $product->id])}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger" type="submit">Удалить</button>
+                        </form>
+                    </th>
                 </tr>
+
             @endforeach
             </tbody>
         </table>

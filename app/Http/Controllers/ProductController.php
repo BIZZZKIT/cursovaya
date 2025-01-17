@@ -20,11 +20,10 @@ class ProductController extends Controller
         return redirect()->back()->with(['successCreateProduct' => 'Продукт успешно создан!']);
     }
 
-    public function removeProduct(Product $product)
+    public function removeProduct($productId)
     {
-        $name = $product->product_name;
-        $product->delete();
-        return back()->with(['delete_product' => $name]);
+        Product::where('id', $productId)->delete();
+        return back();
     }
 
     public function getProducts()

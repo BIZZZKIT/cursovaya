@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/admin/createProduct',[CategoryController::class, 'getCategories'])->name('createProduct');
         Route::post('/admin/createProduct',[ProductController::class, 'createProduct']);
         Route::get('/admin/productList',[ProductController::class, 'getProductsAdmin'])->name('productList');
+        Route::delete('/admin/removeProduct/{productId}',[ProductController::class, 'removeProduct'])->name('removeProduct');
 });
 });
 
