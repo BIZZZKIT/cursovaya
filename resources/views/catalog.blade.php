@@ -40,7 +40,10 @@
                             <h5 class="card-title">{{$product->price_product}}</h5>
                             <p class="card-text">{{$product->name_product}}</p>
                             <p class="card-text">{{$product->category->name_category}}</p>
-                            <a href="#" class="btn btn-primary">В корзину</a>
+                            <form action="{{route('createBasketItem', ['productId' => $product->id])}}" method="post">
+                                @csrf
+                                <button class="btn btn-primary" type="submit">В корзину</button>
+                            </form>
                         </div>
                     </div>
                 @endforeach
