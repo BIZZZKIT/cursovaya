@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Basket;
+use App\Models\basket_items;
+use App\Models\basketitems;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,7 +11,7 @@ class BasketController extends Controller
 {
     public function createBasketItem($productId)
     {
-        Basket::create([
+        basket_items::create([
            'product_id' => $productId,
             'user_id' => Auth::user()->id,
             'countProducts' => 1
@@ -21,7 +22,7 @@ class BasketController extends Controller
 
     public function getBasketItems()
     {
-        $basketItems = Basket::where('user_id', Auth::user()->id)
+        $basketItems = basket_items::where('user_id', Auth::user()->id)
             ->with('product')
             ->get();
 
@@ -29,7 +30,7 @@ class BasketController extends Controller
     }
     public function decreaseProductCount($basketId)
     {
-        $basketItem = Basket::findOrFail($basketId);
+        $basketItem = basket_items::findOrFail($basketId);
 
         if ($basketItem->countProducts > 1) {
             $basketItem->decrement('countProducts');
@@ -42,7 +43,7 @@ class BasketController extends Controller
 
     public function increaseProductCount($basketId)
     {
-        $basketItem = Basket::findOrFail($basketId);
+        $basketItem = basket_items::findOrFail($basketId);
 
         $basketItem->increment('countProducts');
 

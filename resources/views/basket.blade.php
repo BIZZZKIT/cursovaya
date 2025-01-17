@@ -21,22 +21,27 @@
                 Оформить заказ
             </button>
 
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h1 class="modal-title fs-5" id="exampleModalLabel">Оформление заказа</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form action="" method="POST">
+                        <form action="{{route('createOrder')}}" method="POST">
                             @csrf
-                            <label for="address">Адрес доставки:</label>
-                            <input type="text" id="address" name="address" required>
-
-                            <label for="phone">Номер телефона:</label>
-                            <input type="text" id="phone" name="phone" required>
-
-                            <button type="submit">Оформить заказ</button>
+                            <div class="form-group"><label for="address">Адрес доставки:</label> <input type="text"
+                                                                                                        class="form-control"
+                                                                                                        id="address"
+                                                                                                        name="address"
+                                                                                                        required></div>
+                            <div class="form-group"><label for="phone">Номер телефона:</label> <input type="text"
+                                                                                                      class="form-control"
+                                                                                                      id="phone"
+                                                                                                      name="phone"
+                                                                                                      required></div>
+                            <button type="submit" class="btn btn-primary">Оформить заказ</button>
                         </form>
 
                     </div>
@@ -44,28 +49,30 @@
             </div>
         </div>
         <div class="grid-container">
-        @foreach($basketItems as $item)
-            <div class="card">
-                <img src="{{asset('storage/' . $item->product->image_product)}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{$item->product->price_product}}</h5>
-                    <p class="card-text">{{$item->product->name_product}}</p>
-                    <p class="card-text">{{$item->product->category->name_category}}</p>
-                    <div style=" display: flex; vertical-align: center">
-                        <form action="{{ route('decreaseProductCount', ['basketId' => $item->id]) }}" method="POST" class="me-2">
-                            @csrf
-                            <button type="submit" class="btn btn-outline-danger btn-sm">-</button>
-                        </form>
-                        <p class="card-text mt-1">{{ $item->countProducts }}</p>
-                        <form action="{{ route('increaseProductCount', ['basketId' => $item->id]) }}" method="POST" class="ms-2">
-                            @csrf
-                            <button type="submit" class="btn btn-outline-success btn-sm">+</button>
-                        </form>
-                    </div>
+            @foreach($basketItems as $item)
+                <div class="card">
+                    <img src="{{asset('storage/' . $item->product->image_product)}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$item->product->price_product}}</h5>
+                        <p class="card-text">{{$item->product->name_product}}</p>
+                        <p class="card-text">{{$item->product->category->name_category}}</p>
+                        <div style=" display: flex; vertical-align: center">
+                            <form action="{{ route('decreaseProductCount', ['basketId' => $item->id]) }}" method="POST"
+                                  class="me-2">
+                                @csrf
+                                <button type="submit" class="btn btn-outline-danger btn-sm">-</button>
+                            </form>
+                            <p class="card-text mt-1">{{ $item->countProducts }}</p>
+                            <form action="{{ route('increaseProductCount', ['basketId' => $item->id]) }}" method="POST"
+                                  class="ms-2">
+                                @csrf
+                                <button type="submit" class="btn btn-outline-success btn-sm">+</button>
+                            </form>
+                        </div>
 
+                    </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
         </div>
     </div>
 @endsection

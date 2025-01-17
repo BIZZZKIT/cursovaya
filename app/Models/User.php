@@ -16,7 +16,7 @@ class User extends Authenticatable
 
     public function basketItems()
     {
-        return $this->hasMany(BasketItem::class);
+        return $this->hasMany(basket_items::class);
     }
 
     public function orders()

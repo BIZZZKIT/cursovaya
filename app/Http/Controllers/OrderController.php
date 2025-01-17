@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -18,6 +19,6 @@ class OrderController extends Controller
             $item->order_id = $order->id;
             $item->save();
         }
-        return response()->json(['message' => 'Заказ успешно оформлен', 'order_id' => $order->id], 201);
+        return back()->with(['successOrederCreate' => 'Заказ создан']);
     }
 }
