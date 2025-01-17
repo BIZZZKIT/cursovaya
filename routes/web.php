@@ -29,8 +29,7 @@ Route::post('/auth',[UserController::class,'loginPost'])->name('login');
 Route::view('/register','user.register')->name('register');
 Route::post('/register',[UserController::class, 'registrationPost']);
 Route::get('/catalog',[CatalogController::class, 'viewCatalog'])->name('catalog');
-Route::view('/product','card-product')->name('product');
-Route::get('/product/{id}',[ProductController::class, 'getCardProducts']);
+Route::get('/catalog/product/{product}',[ProductController::class, 'getCardProducts'])->name('product');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/logout',[UserController::class, 'logout'])->name('logout');
     Route::post('/catalog/createBasketItem/{productId}',[BasketController::class, 'createBasketItem'])->name('createBasketItem');

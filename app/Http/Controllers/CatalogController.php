@@ -13,7 +13,7 @@ class CatalogController extends Controller
         $sortByPrice = $request->query('sort_price', 'asc');
         $categoryID = $request->query('category', '');
 
-        $productQuery = Product::where('count_product', '>', 0);
+        $productQuery = Product::where('id', '>', 0);
 
         if($categoryID) {
             $productQuery->where('category_id', $categoryID);

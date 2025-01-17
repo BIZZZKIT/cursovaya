@@ -26,7 +26,7 @@
         <div class="d-flex justify-content-center flex-wrap gap-5">
             <div class="col-md-6">
                 <div class="product-card">
-                    <div class="product-image">
+                    <div class="product-image text-center">
                         <img src="{{asset('storage/' . $products->image_product)}}" alt="Название продукта" class="img-fluid">
                     </div>
                     <div class="p-4">
@@ -36,7 +36,12 @@
                         <p class="product-description">
                             {{$products->description_product}}
                         </p>
-                        <button class="btn btn-primary mt-3">Добавить в корзину</button>
+                        @auth()
+                        <form action="{{route('createBasketItem', ['productId' => $product->id])}}" method="post">
+                            @csrf
+                                <button class="btn btn-primary" type="submit">В корзину</button>
+                        </form>
+                        @endauth
                     </div>
                 </div>
             </div>
@@ -54,7 +59,9 @@
                     <strong>Алексей К.</strong>
                     <p>Не совсем то, что ожидал, но в целом неплохо.</p>
                 </div>
+                @auth()
                 <button class="btn btn-secondary mt-3">Оставить отзыв</button>
+                @endauth
             </div>
         </div>
 
