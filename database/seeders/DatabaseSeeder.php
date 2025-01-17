@@ -17,19 +17,18 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::insert([
-            [
                 'login' => 'User',
                 'full_name' => 'Иванов Иван Иванович',
                 'number_phone' => '89238228388',
                 'password' => Hash::make('123456'),
-            ],
-            [
-                'login'=>'admin',
-                'full_name'=>'admin',
-                'number_phone'=>'admin',
-                'password'=>Hash::make('admin'),
-                'is_admin'=>true,
-            ]
+        ]);
+
+        User::insert([
+            'login'=>'admin',
+            'full_name'=>'admin',
+            'number_phone'=>'admin',
+            'password'=>Hash::make('admin'),
+            'is_admin'=>true,
         ]);
 
         Category::insert([
