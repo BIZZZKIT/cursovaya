@@ -33,4 +33,10 @@ class ProductController extends Controller
 
         return view('catalog', ['products' => $products]);
     }
+    public function getProductsAdmin()
+    {
+        $products = Product::all();
+
+        return view('admin.tableProducts', ['products' => $products]);
+    }
 }

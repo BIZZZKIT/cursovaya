@@ -35,6 +35,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/admin/categoryCreate',[CategoryController::class, 'createCategory'])->name('categoryCreate');
         Route::get('/admin/createProduct',[CategoryController::class, 'getCategories'])->name('createProduct');
         Route::post('/admin/createProduct',[ProductController::class, 'createProduct']);
+        Route::get('/admin/productList',[ProductController::class, 'getProductsAdmin'])->name('productList');
 });
 });
 

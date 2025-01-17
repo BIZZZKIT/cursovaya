@@ -15,7 +15,7 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Таблица товаров</a></li>
+                        <a class="dropdown-item" href="{{route('productList')}}"><li>Таблица товаров</li></a>
                         <li>
                             <button type="button" class="dropdown-item" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal">
