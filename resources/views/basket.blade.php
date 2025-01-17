@@ -16,6 +16,33 @@
         <div class="d-flex justify-content-center align-items-center">
             <h1>Корзина</h1>
         </div>
+        <div class="d-flex justify-content-center align-items-center">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Оформить заказ
+            </button>
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Оформление заказа</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form action="" method="POST">
+                            @csrf
+                            <label for="address">Адрес доставки:</label>
+                            <input type="text" id="address" name="address" required>
+
+                            <label for="phone">Номер телефона:</label>
+                            <input type="text" id="phone" name="phone" required>
+
+                            <button type="submit">Оформить заказ</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="grid-container">
         @foreach($basketItems as $item)
             <div class="card">

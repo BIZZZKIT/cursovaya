@@ -3,6 +3,7 @@
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -37,6 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/basket',[BasketController::class, 'getBasketItems'])->name('basket');
     Route::post('/basket/decrease/{basketId}', [BasketController::class, 'decreaseProductCount'])->name('decreaseProductCount');
     Route::post('/basket/increase/{basketId}', [BasketController::class, 'increaseProductCount'])->name('increaseProductCount');
+    Route::post('/basket/createOrder', [OrderController::class, 'createOrder'])->name('createOrder');
     Route::group(['middleware' => 'role'], function () {
         Route::view('/admin','admin.admin-panel')->name('admin');
         Route::post('/admin/categoryCreate',[CategoryController::class, 'createCategory'])->name('categoryCreate');
