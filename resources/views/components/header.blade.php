@@ -26,6 +26,7 @@
                     @endif
                     @if(!Auth::user()->is_admin)
                             <a href="{{route('basket')}}" class="btn btn-primary">Корзина</a>
+                            <a class="btn btn-primary" href="{{route('myOrders')}}">Мои заказы</a>
                     @endif
                     <a href="{{ route('logout') }}" class="btn btn-danger">Выйти</a>
                 @endauth
