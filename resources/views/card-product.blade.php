@@ -37,7 +37,7 @@
                             {{$products->description_product}}
                         </p>
                         @auth()
-                        <form action="{{route('createBasketItem', ['productId' => $product->id])}}" method="post">
+                        <form action="" method="post">
                             @csrf
                                 <button class="btn btn-primary" type="submit">В корзину</button>
                         </form>
@@ -60,8 +60,40 @@
                     <p>Не совсем то, что ожидал, но в целом неплохо.</p>
                 </div>
                 @auth()
-                <button class="btn btn-secondary mt-3">Оставить отзыв</button>
+                    <button type="button" class="btn btn-secondary mt-3" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                        Оставить отзыв
+                    </button>
                 @endauth
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Оставить отзыв</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <form action="{{route('categoryCreate')}}" method="post">
+                                @csrf
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <input class="form-control" type="text" name="name_review" id="name_review"
+                                               placeholder="Ваше имя">
+                                    </div>
+                                    <div class="mb-3">
+                                        <textarea class="form-control" rows="3" style="max-height: 400px" type="text" name="text_review" id="text_review" placeholder="Ваш отзыв"></textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">Опубликовать</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
