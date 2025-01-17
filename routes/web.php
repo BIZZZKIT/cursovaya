@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::view('/admin','admin.admin-panel')->name('admin');
         Route::post('/admin/categoryCreate',[CategoryController::class, 'createCategory'])->name('categoryCreate');
         Route::get('/admin/createProduct',[CategoryController::class, 'getCategories'])->name('createProduct');
+        Route::post('/admin/createProduct',[ProductController::class, 'createProduct']);
 });
 });
 

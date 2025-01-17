@@ -4,7 +4,7 @@
     <div class="container vh-100">
         <div class="row justify-content-center align-items-center h-100">
             <div class="col-10 col-md-4 p-5 bg-form" style="border-radius: 30px; background-color: #03045E">
-                <h2 class="text-center mb-5 text-white">Регистрация</h2>
+                <h2 class="text-center mb-5 text-white">Добавление товара</h2>
                 <form method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-4">
