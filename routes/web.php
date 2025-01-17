@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\BasketController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
@@ -32,10 +31,6 @@ Route::view('/product','card-product')->name('product');
 Route::get('/product/{id}',[ProductController::class, 'getCardProducts']);
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/logout',[UserController::class, 'logout'])->name('logout');
-    Route::post('/catalog/createBasketItem/{productId}',[BasketController::class, 'createBasketItem'])->name('createBasketItem');
-    Route::get('/basket',[BasketController::class, 'getBasketItems'])->name('basket');
-    Route::post('/basket/decrease/{basketId}', [BasketController::class, 'decreaseProductCount'])->name('decreaseProductCount');
-    Route::post('/basket/increase/{basketId}', [BasketController::class, 'increaseProductCount'])->name('increaseProductCount');
     Route::group(['middleware' => 'role'], function () {
         Route::view('/admin','admin.admin-panel')->name('admin');
         Route::post('/admin/categoryCreate',[CategoryController::class, 'createCategory'])->name('categoryCreate');

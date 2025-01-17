@@ -1,5 +1,5 @@
 @extends('welcome')
-@section('title', 'Каталог')
+@section('title', $products->name_product)
 @section('content')
     <style>
         .product-card {
@@ -25,23 +25,22 @@
     <div class="container mt-5">
         <div class="d-flex justify-content-center flex-wrap gap-5">
             <div class="col-md-6">
-                @foreach($products as $product)
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="path/to/product-image.jpg" alt="Название продукта" class="img-fluid">
+                        <img src="{{asset('storage/' . $products->image_product)}}" alt="Название продукта" class="img-fluid">
                     </div>
                     <div class="p-4">
-                        <h1 class="product-title">Название продукта</h1>
-                        <p class="product-country">Страна производителя: <strong>Россия</strong></p>
+                        <h1 class="product-title">{{$products->name_product}}</h1>
+                        <h1 class="product-title">Цена: <strong>{{$products->price_product}}</strong></h1>
+                        <p class="product-country">Страна производителя: <strong>{{$products->country_product}}</strong></p>
                         <p class="product-description">
-                            Здесь будет описание продукта. Оно должно быть информативным и привлекательным, чтобы заинтересовать покупателя. Вы можете добавить детали о характеристиках, преимуществах и использовании продукта.
+                            {{$products->description_product}}
                         </p>
                         <button class="btn btn-primary mt-3">Добавить в корзину</button>
                     </div>
                 </div>
-                @endforeach
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mb-5">
                 <h2>Отзывы</h2>
                 <div class="review">
                     <strong>Иван П.</strong>

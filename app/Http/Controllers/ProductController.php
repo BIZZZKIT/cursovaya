@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateProductRequest;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -26,12 +27,6 @@ class ProductController extends Controller
         return back();
     }
 
-    public function getProducts()
-    {
-        $products = Product::all();
-
-        return view('catalog', ['products' => $products]);
-    }
     public function getProductsAdmin()
     {
         $products = Product::all();
@@ -39,10 +34,10 @@ class ProductController extends Controller
         return view('admin.tableProducts', ['products' => $products]);
     }
 
-    public function getCardProducts($id)
+    public function getCardProducts(Product $product)
     {
-        $products = Product::findOrFail($id);
+        $products = Product::find($product->id);
 
-        return view('card-product', ['products' => $products]);
+        return view('card-product', compact('products'));
     }
 }

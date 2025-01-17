@@ -63,7 +63,7 @@ class DatabaseSeeder extends Seeder
                 'description_product' => 'Холодильник с морозильной камерой, объем 350 л, класс энергопотребления A++.',
                 'price_product' => 45999,
                 'category_id'=>'2',
-                'image_product' => 'pilesos.jpg',
+                'image_product' => 'holodilnik.png',
                 'country_product' => 'Южная Корея'
             ],
             [
@@ -79,7 +79,7 @@ class DatabaseSeeder extends Seeder
                 'description_product' => 'Чайник с функцией автоматического отключения, объем 1.7 л, мощность 2200 Вт.',
                 'price_product' => 2999,
                 'category_id'=>'4',
-                'image_product' => 'holodilnik.png',
+                'image_product' => 'chainik.jpg',
                 'country_product' => 'Нидерланды'
             ],
             [
@@ -87,7 +87,7 @@ class DatabaseSeeder extends Seeder
                 'description_product' => 'Беспроводной пылесос с мощной всасывающей способностью и HEPA-фильтром.',
                 'price_product' => 24999,
                 'category_id'=>'5',
-                'image_product' => 'chainik.jpg',
+                'image_product' => 'pilesos.jpg',
                 'country_product' => 'Великобритания'
             ],
         ]);
