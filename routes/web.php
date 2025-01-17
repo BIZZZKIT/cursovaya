@@ -5,6 +5,7 @@ use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,10 +31,11 @@ Route::post('/auth',[UserController::class,'loginPost'])->name('login');
 Route::view('/register','user.register')->name('register');
 Route::post('/register',[UserController::class, 'registrationPost']);
 Route::get('/catalog',[CatalogController::class, 'viewCatalog'])->name('catalog');
-Route::get('/catalog/product/{product}',[ProductController::class, 'getCardProducts'])->name('product');
+Route::get('/catalog/product/{productID}',[ProductController::class, 'getCardProducts'])->name('product');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/logout',[UserController::class, 'logout'])->name('logout');
     Route::post('/catalog/createBasketItem/{productId}',[BasketController::class, 'createBasketItem'])->name('createBasketItem');
+    Route::post('/catalog/product/addReview/{productID}',[ReviewController::class, 'addReview'])->name('addReview');
     Route::get('/basket',[BasketController::class, 'getBasketItems'])->name('basket');
     Route::post('/basket/decrease/{basketId}', [BasketController::class, 'decreaseProductCount'])->name('decreaseProductCount');
     Route::post('/basket/increase/{basketId}', [BasketController::class, 'increaseProductCount'])->name('increaseProductCount');

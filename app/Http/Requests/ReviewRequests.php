@@ -11,7 +11,7 @@ class ReviewRequests extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,14 @@ class ReviewRequests extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name_review' => 'required|string',
+            'text_review' => 'required|string',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'required' => 'Обязательное поле для заполнения.',
         ];
     }
 }

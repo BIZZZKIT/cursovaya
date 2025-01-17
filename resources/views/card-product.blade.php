@@ -47,18 +47,12 @@
             </div>
             <div class="col-md-6 mb-5">
                 <h2>Отзывы</h2>
-                <div class="review">
-                    <strong>Иван П.</strong>
-                    <p>Отличный продукт! Очень доволен покупкой.</p>
-                </div>
-                <div class="review">
-                    <strong>Мария С.</strong>
-                    <p>Качество на высоте, рекомендую!</p>
-                </div>
-                <div class="review">
-                    <strong>Алексей К.</strong>
-                    <p>Не совсем то, что ожидал, но в целом неплохо.</p>
-                </div>
+                @foreach($reviews as $review)
+                    <div class="review">
+                        <strong>{{$review->name_review}}</strong>
+                        <p>{{$review->text_review}}</p>
+                    </div>
+                @endforeach
                 @auth()
                     <button type="button" class="btn btn-secondary mt-3" data-bs-toggle="modal"
                             data-bs-target="#exampleModal">
@@ -74,15 +68,25 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                             </div>
-                            <form action="{{route('categoryCreate')}}" method="post">
+                            <form action="{{route('addReview',$products)}}" method="POST">
                                 @csrf
                                 <div class="modal-body">
                                     <div class="mb-3">
-                                        <input class="form-control" type="text" name="name_review" id="name_review"
+                                        <input class="form-control @error('name_review') is-invalid @enderror" type="text" name="name_review" id="name_review"
                                                placeholder="Ваше имя">
+                                        @error('name_review')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
                                     <div class="mb-3">
-                                        <textarea class="form-control" rows="3" style="max-height: 400px" type="text" name="text_review" id="text_review" placeholder="Ваш отзыв"></textarea>
+                                        <textarea class="form-control @error('text_review') is-invalid @enderror" rows="3" style="max-height: 400px" type="text" name="text_review" id="text_review" placeholder="Ваш отзыв"></textarea>
+                                        @error('text_review')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="modal-footer">

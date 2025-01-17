@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateProductRequest;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -34,10 +35,12 @@ class ProductController extends Controller
         return view('admin.tableProducts', ['products' => $products]);
     }
 
-    public function getCardProducts(Product $product)
+    public function getCardProducts(Product $productID)
     {
-        $products = Product::find($product->id);
+        $products = Product::find($productID->id);
 
-        return view('card-product', compact('products'));
+        $reviews = Review::where('product_id', $productID->id)->get();
+
+        return view('card-product', compact('products','reviews'));
     }
 }
