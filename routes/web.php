@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,8 +22,8 @@ Route::get('/', function () {
 
 Route::view('/about', 'about')->name('about');
 
-Route::view('/auth','user.auth')->name('auth');
-Route::post('/auth',[UserController::class,'loginPost'])->name('auth');
+Route::view('/auth','user.auth')->name('login');
+Route::post('/auth',[UserController::class,'loginPost'])->name('login');
 Route::view('/register','user.register')->name('register');
 Route::post('/register',[UserController::class, 'registrationPost']);
 Route::view('/catalog','catalog')->name('catalog');
@@ -32,6 +33,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => 'role'], function () {
         Route::view('/admin','admin.admin-panel')->name('admin');
         Route::post('/admin/categoryCreate',[CategoryController::class, 'createCategory'])->name('categoryCreate');
+        Route::get('/admin/createProduct',[CategoryController::class, 'getCategories'])->name('createProduct');
 });
 });
 

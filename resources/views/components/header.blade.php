@@ -31,7 +31,7 @@
                 @endauth
 
                 @guest()
-                        <a href="{{route('auth')}}"><div class="btn btn-primary">Вход</div></a>
+                        <a href="{{route('login')}}"><div class="btn btn-primary">Вход</div></a>
                         <a href="{{route('register')}}"><div class="btn text-white btn-info">Зарегистрироваться</div></a>
                 @endguest
             </div>

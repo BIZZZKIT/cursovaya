@@ -11,7 +11,7 @@
                         Управление товарами
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Создать товар</a></li>
+                        <a class="dropdown-item" href="{{route('createProduct')}}"><li>Создать товар</li></a>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
