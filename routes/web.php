@@ -27,7 +27,7 @@ Route::post('/auth',[UserController::class,'loginPost'])->name('login');
 Route::view('/register','user.register')->name('register');
 Route::post('/register',[UserController::class, 'registrationPost']);
 Route::get('/catalog',[ProductController::class, 'getProducts'])->name('catalog');
-
+Route::view('/product','card-product')->name('product');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/logout',[UserController::class, 'logout'])->name('logout');
     Route::group(['middleware' => 'role'], function () {
