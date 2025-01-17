@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('price_product');
             $table->string('image_product');
             $table->string('country_product');
-            $table->string('count_product');
             $table->timestamps();
         });
     }

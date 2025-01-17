@@ -56,8 +56,7 @@ class DatabaseSeeder extends Seeder
                 'price_product' => 29999,
                 'category_id'=>'1',
                 'image_product' => 'stiralka.jpeg',
-                'country_product' => 'Южная Корея',
-                'count_product' => 15,
+                'country_product' => 'Южная Корея'
             ],
             [
                 'name_product' => 'Холодильник Samsung',
@@ -65,8 +64,7 @@ class DatabaseSeeder extends Seeder
                 'price_product' => 45999,
                 'category_id'=>'2',
                 'image_product' => 'pilesos.jpg',
-                'country_product' => 'Южная Корея',
-                'count_product' => 10,
+                'country_product' => 'Южная Корея'
             ],
             [
                 'name_product' => 'Микроволновая печь Panasonic',
@@ -74,8 +72,7 @@ class DatabaseSeeder extends Seeder
                 'price_product' => 8999,
                 'category_id'=>'3',
                 'image_product' => 'microvolnovka.jpg',
-                'country_product' => 'Япония',
-                'count_product' => 25,
+                'country_product' => 'Япония'
             ],
             [
                 'name_product' => 'Электрический чайник Philips',
@@ -83,8 +80,7 @@ class DatabaseSeeder extends Seeder
                 'price_product' => 2999,
                 'category_id'=>'4',
                 'image_product' => 'holodilnik.png',
-                'country_product' => 'Нидерланды',
-                'count_product' => 50,
+                'country_product' => 'Нидерланды'
             ],
             [
                 'name_product' => 'Пылесос Dyson',
@@ -92,8 +88,7 @@ class DatabaseSeeder extends Seeder
                 'price_product' => 24999,
                 'category_id'=>'5',
                 'image_product' => 'chainik.jpg',
-                'country_product' => 'Великобритания',
-                'count_product' => 20,
+                'country_product' => 'Великобритания'
             ],
         ]);
     }
