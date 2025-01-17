@@ -29,7 +29,7 @@
 @extends('welcome')
 @section('title', 'Главная страница')
 @section('content')
-    <div class="carousel">
+    <div class="carousel mt-5">
         <div class="container">
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner">
@@ -57,8 +57,8 @@
         </div>
     </div>
     <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-        <div class="brends">
-            <div class="container mt-4">
+        <div class="brands">
+            <div class="container mt-2">
                 <div class="d-flex justify-content-center align-items-center mb-4">
                     <h1>Популярные бренды</h1>
                 </div>
@@ -135,9 +135,4 @@
         </div>
     </div>
 
-    <div class="reviews">
-        <div class="d-flex justify-content-center align-items-center">
-            <h1>Отзывы</h1>
-        </div>
-    </div>
 @endsection

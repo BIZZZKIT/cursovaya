@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Review;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -89,6 +90,88 @@ class DatabaseSeeder extends Seeder
                 'category_id'=>'5',
                 'image_product' => 'pilesos.jpg',
                 'country_product' => 'Великобритания'
+            ],
+        ]);
+
+        Review::insert([
+            [
+                'name_review' => 'Дима',
+                'text_review' => 'Я очень доволен этой покупкой. Работает безупречно.',
+                'product_id' => 1,
+            ],
+            [
+                'name_review' => 'Оля',
+                'text_review' => 'Качество на высоте, рекомендую всем!',
+                'product_id' => 1,
+            ],
+            [
+                'name_review' => 'Андрей',
+                'text_review' => 'Продукт неплохой, но есть некоторые недостатки.',
+                'product_id' => 1,
+            ],
+
+            [
+                'name_review' => 'Павел',
+                'text_review' => 'Превосходный товар, полностью оправдал ожидания.',
+                'product_id' => 2,
+            ],
+            [
+                'name_review' => 'Света',
+                'text_review' => 'Лучший продукт в своем классе!',
+                'product_id' => 2,
+            ],
+            [
+                'name_review' => 'Коля',
+                'text_review' => 'В целом, продукт хороший, но есть нюансы.',
+                'product_id' => 2,
+            ],
+
+            [
+                'name_review' => 'Андрей',
+                'text_review' => 'К сожалению, продукт не оправдал моих ожиданий.',
+                'product_id' => 3,
+            ],
+            [
+                'name_review' => 'Маша',
+                'text_review' => 'Продукт средний, есть лучше.',
+                'product_id' => 3,
+            ],
+            [
+                'name_review' => 'Макс',
+                'text_review' => 'В целом, неплохо, но есть куда расти.',
+                'product_id' => 3,
+            ],
+
+            [
+                'name_review' => 'Влад',
+                'text_review' => 'Продукт просто супер, всем рекомендую!',
+                'product_id' => 4,
+            ],
+            [
+                'name_review' => 'Толя',
+                'text_review' => 'Очень доволен покупкой, спасибо!',
+                'product_id' => 4,
+            ],
+            [
+                'name_review' => 'Гриша',
+                'text_review' => 'Хороший продукт, буду заказывать еще.',
+                'product_id' => 4,
+            ],
+
+            [
+                'name_review' => 'Андрей',
+                'text_review' => 'Продукт неплохой, но ожидал большего.',
+                'product_id' => 5,
+            ],
+            [
+                'name_review' => 'Дима',
+                'text_review' => 'В целом, продукт хороший, но есть недостатки.',
+                'product_id' => 5,
+            ],
+            [
+                'name_review' => 'Лёня',
+                'text_review' => 'Продукт сойдет, но не без недостатков.',
+                'product_id' => 5,
             ],
         ]);
     }
